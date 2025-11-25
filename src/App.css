@@ -49,7 +49,7 @@
 }
 
 .form {
-  background-image: url("./pattern-bg-desktop.png");
+  background-image: url("/pattern-bg-desktop.png");
   padding: 100px;
   height: auto;
 }

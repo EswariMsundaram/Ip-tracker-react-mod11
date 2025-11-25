@@ -64,7 +64,7 @@ function App() {
             value={domain}
           />
           <button className="arrow" type="submit">
-            <img src="./icon-arrow.svg" alt="search" />
+            <img src="/icon-arrow.svg" alt="search" />
           </button>
         </div>
      

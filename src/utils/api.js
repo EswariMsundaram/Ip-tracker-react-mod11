@@ -1,4 +1,4 @@
-const API_KEY="at_EYDcjQM8mkAoBTho7RnMXWg9wZ585"
+//const API_KEY="at_EYDcjQM8mkAoBTho7RnMXWg9wZ585"
 
 export async function fetchIpData(domain=""){
     const url=domain ? `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${domain}`
