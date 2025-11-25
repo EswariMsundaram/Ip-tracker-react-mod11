@@ -1,5 +1,4 @@
-//import leaflet, create map only using useEffect(()=>{...}, []), update map center when data changes
-// create map once, update view on state changes,
+
 import {
   MapContainer,
   TileLayer,
