@@ -1,18 +1,77 @@
-# React + Vite
+##IP Tracker Project##
+**Project Overview**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The IP Tracker is a web application that allows users to track the IP address of any website or device and display the following information:
 
-Currently, two official plugins are available:
+Public IP address
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Location (city, region, country, postal code)
 
-## React Compiler
+Time zone
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+ISP (Internet Service Provider)
 
-Note: This will impact Vite dev & build performances.
+Map visualization of the location
 
-## Expanding the ESLint configuration
+It fetches data from the Geo.IPify API and displays the location using Leaflet maps in React.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Features**
+
+IP Address Search
+
+Users can enter an IP address (e.g., 8.8.8.8) to fetch location data.
+
+Automatic User IP Detection
+
+On page load, the app fetches the current public IP address of the user.
+
+Dynamic Map Visualization
+
+Displays the IP location on a Leaflet map.
+
+Updates the map center and marker dynamically when a new IP/domain is searched.
+
+Error Handling
+
+Displays messages for invalid inputs, failed API calls, or empty input.
+
+Responsive Design
+
+Works on desktop and mobile viewports.
+
+Tech Stack
+
+Frontend: React, React Hooks
+
+Map: Leaflet + React-Leaflet
+
+API: Geo.IPify (IP & Domain Lookup)
+
+Styling: CSS (can be customized)
+
+Project Structure
+src/
+components/MapView.jsx   - Displays Leaflet map with dynamic marker
+utils/api.js             - Fetch function to call Geo.IPify API
+App.js                   - Main component handling state, search, and info display
+App.css                  - Styling
+
+
+Data Flow
+
+User types an IP or domain in the input box (SearchBar).
+
+On submit, the app calls fetchIpData(input) from utils/api.js.
+
+API returns a JSON object with ip, location, timezone, and isp.
+
+ipData state is updated in App.js.
+
+App 
+Displays IP, location, timezone, ISP
+
+MapView → displays location marker on the map
+
+If the input is empty or invalid, an error message is displayed.
+
+
